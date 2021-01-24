@@ -6,10 +6,22 @@ import { Component } from '@angular/core';
   // styleUrls: ['./app.component.css'],
   styles: [
     `
-      h3 {
-        color: dodgerBlue;
+      .after5Log {
+        color: white;
       }
     `,
   ],
 })
-export class AppComponent {}
+export class AppComponent {
+  showDetails = false;
+  log = [];
+
+  toggleDetails() {
+    this.showDetails = !this.showDetails;
+    this.log.push(this.log.length + 1);
+  }
+
+  getBackgroundColor(logItem) {
+    return logItem >= 5 ? 'blue' : 'transparent';
+  }
+}
