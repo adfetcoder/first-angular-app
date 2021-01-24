@@ -18,7 +18,9 @@ export class AppComponent {
 
   toggleDetails() {
     this.showDetails = !this.showDetails;
-    this.log.push(this.log.length + 1);
+    // this.log.push(this.log.length + 1);
+    // push timestamp instead
+    this.log.push(new Date());
   }
 
   getBackgroundColor(logItem) {
